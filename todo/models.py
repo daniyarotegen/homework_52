@@ -2,8 +2,17 @@ from django.db import models
 
 
 class Task(models.Model):
+    NEW = 'new'
+    COMPLETED = 'completed'
+    IN_PROCESS = 'in process'
+    STATUS_CHOICES = [
+        (NEW, 'New'),
+        (COMPLETED, 'Completed'),
+        (IN_PROCESS, 'In Process'),
+    ]
+
     description = models.TextField(max_length=200, null=False, blank=False, verbose_name='description')
-    status = models.CharField(max_length=10, null=False, blank=False, verbose_name='status', default='new')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=NEW, verbose_name='status')
     completion_date = models.DateField(null=True, blank=True, verbose_name='Completion time')
 
     def __str__(self):
