@@ -1,3 +1,13 @@
 from django.contrib import admin
+from todo.models import Task
 
-# Register your models here.
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('id', 'description', 'status', 'completion_date')
+    list_filter = ('id', 'description', 'status', 'completion_date')
+    search_fields = ('description', 'description')
+    fields = ('id', 'description', 'status', 'completion_date')
+    readonly_fields = ['id']
+
+
+admin.site.register(Task, TaskAdmin)
