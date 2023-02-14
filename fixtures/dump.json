@@ -1,0 +1,29 @@
+[
+{
+  "model": "todo.task",
+  "pk": 9,
+  "fields": {
+    "description": "Wash dishes",
+    "status": "new",
+    "completion_date": "2023-02-14"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 10,
+  "fields": {
+    "description": "Buy groceries",
+    "status": "completed",
+    "completion_date": "2023-02-14"
+  }
+},
+{
+  "model": "todo.task",
+  "pk": 11,
+  "fields": {
+    "description": "Make a call",
+    "status": "in process",
+    "completion_date": "2023-02-14"
+  }
+}
+]
